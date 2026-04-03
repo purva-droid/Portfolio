@@ -784,11 +784,21 @@
             font-family: 'Space Mono', monospace;
         }
 
+        #canvas-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+        }
+
         .cursor-glow {
             position: fixed;
             width: 200px;
             height: 200px;
-            background: radial-gradient(circle, rgba(0, 229, 184, 0.06), transparent 70%);
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.06), transparent 70%);
             border-radius: 50%;
             pointer-events: none;
             z-index: 9999;
@@ -829,7 +839,6 @@
                 <div class="header-text reveal">
                     <div class="badge">Available for opportunities</div>
                     
-                    <div class="terminal-line">whoami</div>
                     <h1>Hi, I'm <span class="typing-text">Purva Bharti</span></h1>
                     <p>Data Analyst & Operations Engineer | IIT Kanpur Graduate | Turning complex data into actionable insights and measurable impact</p>
                     
@@ -1125,9 +1134,61 @@
         </div>
     </footer>
 
+    <canvas id="canvas-bg"></canvas>
     <div class="cursor-glow" id="cursorGlow"></div>
 
     <script>
+        // Canvas grid background like priyanshu.me
+        const canvas = document.getElementById('canvas-bg');
+        const ctx = canvas.getContext('2d');
+        
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+        
+        let mouse = { x: 0, y: 0 };
+        document.addEventListener('mousemove', e => {
+            mouse.x = e.clientX;
+            mouse.y = e.clientY;
+        });
+        
+        function drawGrid() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.strokeStyle = 'rgba(59, 130, 246, 0.05)';
+            ctx.lineWidth = 1;
+            
+            const gridSize = 40;
+            
+            for(let x = 0; x <= canvas.width; x += gridSize) {
+                ctx.beginPath();
+                ctx.moveTo(x, 0);
+                ctx.lineTo(x, canvas.height);
+                ctx.stroke();
+            }
+            
+            for(let y = 0; y <= canvas.height; y += gridSize) {
+                ctx.beginPath();
+                ctx.moveTo(0, y);
+                ctx.lineTo(canvas.width, y);
+                ctx.stroke();
+            }
+            
+            // Mouse effect
+            const gradient = ctx.createRadialGradient(mouse.x, mouse.y, 0, mouse.x, mouse.y, 250);
+            gradient.addColorStop(0, 'rgba(59, 130, 246, 0.06)');
+            gradient.addColorStop(1, 'rgba(59, 130, 246, 0)');
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            
+            requestAnimationFrame(drawGrid);
+        }
+        
+        drawGrid();
+
         // Scroll reveal animations
         const revealElements = document.querySelectorAll('.reveal');
         

@@ -6,12 +6,12 @@ Data Analyst & Operations Engineer Portfolio | IIT Kanpur Graduate
 
 ## ✨ Features
 
-- Modern dark carbon gray theme with blue/indigo accents
+- Carbon gray theme with blue/indigo accents
+- Animated canvas grid background (priyanshu.me style)
 - Smooth scroll reveal animations
-- Terminal inspired design elements
 - Typing animation effect
 - Magnetic button interactions
-- Custom cursor glow effect
+- Custom cursor effects
 - Fully responsive design
 - Working contact form with Formspree integration
 
@@ -37,4 +37,4 @@ Data Analyst & Operations Engineer Portfolio | IIT Kanpur Graduate
 - GitHub: [@purva-droid](https://github.com/purva-droid)
 - Behance: [purvabharti](https://www.behance.net/purvabharti)
 
-Built with ❤️ using vanilla HTML, CSS, and JavaScript
+Built with vanilla HTML, CSS, and JavaScript
