@@ -1,6 +1,6 @@
 # Purva Bharti - Portfolio
 
-[![Live Site](https://img.shields.io/badge/Live-purva--droid.github.io/Portfolio-blue)](https://purva-droid.github.io/Portfolio/)
+[![Live Site](https://img.shields.io/badge/Live-purva--droid.github.io/Portfolio-lavender)](https://purva-droid.github.io/Portfolio/)
 
 Data Analyst & Operations Engineer Portfolio | IIT Kanpur Graduate
 
