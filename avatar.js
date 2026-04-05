@@ -104,11 +104,11 @@ function stopTour() {
 const hemiLight = new THREE.HemisphereLight(0xffffff, 0x444444, 1.5);
 scene.add(hemiLight);
 
-const dirLight = new THREE.DirectionalLight(0x3b82f6, 1.2);
+const dirLight = new THREE.DirectionalLight(0xa78bfa, 1.2);
 dirLight.position.set(2, 2, 5);
 scene.add(dirLight);
 
-const fillLight = new THREE.DirectionalLight(0x8b5cf6, 0.6);
+const fillLight = new THREE.DirectionalLight(0xc084fc, 0.6);
 fillLight.position.set(-2, 0, 2);
 scene.add(fillLight);
 
