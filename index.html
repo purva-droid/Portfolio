@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>Purva Bharti | Data Analyst & Engineer</title>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
     <style>
@@ -56,16 +56,16 @@
         .reveal-delay-3 { transition-delay: 0.3s; }
         .reveal-delay-4 { transition-delay: 0.4s; }
 
-        body {
-            font-family: 'DM Sans', sans-serif;
-            background: var(--bg-primary);
-            color: var(--text-primary);
-            line-height: 1.6;
-            min-height: 100vh;
-            background-image: 
-                radial-gradient(ellipse 80% 50% at 50% -20%, rgba(0, 229, 184, 0.15), transparent),
-                radial-gradient(ellipse 60% 40% at 100% 100%, rgba(139, 92, 246, 0.1), transparent);
-        }
+         body {
+             font-family: 'DM Sans', sans-serif;
+             background: var(--bg-primary);
+             color: var(--text-primary);
+             line-height: 1.6;
+             min-height: 100vh;
+             background-image: 
+                 radial-gradient(ellipse 80% 50% at 50% -20%, rgba(0, 229, 184, 0.15), transparent),
+                 radial-gradient(ellipse 60% 40% at 100% 100%, rgba(139, 92, 246, 0.1), transparent);
+         }
 
         @keyframes float {
             0%, 100% { transform: translateY(0px); }
@@ -284,7 +284,7 @@
             background: rgba(0, 229, 184, 0.08);
             border: 1px solid rgba(0, 229, 184, 0.25);
             border-radius: 50px;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             color: var(--accent);
             font-family: 'Space Mono', monospace;
             margin-bottom: 24px;
@@ -549,7 +549,7 @@
             background: var(--bg-tertiary);
             color: var(--text-secondary);
             border-radius: 6px;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             font-family: 'Space Mono', monospace;
         }
 
@@ -727,7 +727,7 @@
             background: rgba(139, 92, 246, 0.1);
             border: 1px solid rgba(139, 92, 246, 0.3);
             border-radius: 8px;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             color: #a78bfa;
             transition: all 0.2s;
         }
@@ -814,14 +814,108 @@
             }
         }
 
-        @media (max-width: 768px) {
-            header h1 { font-size: 2.5rem; }
-            .projects-grid { grid-template-columns: 1fr; }
-            .stats-grid { grid-template-columns: repeat(2, 1fr); }
-            .skills-grid { grid-template-columns: 1fr; }
-            .nav-links { display: none; }
-            header { padding: 120px 0 60px; }
-        }
+         @media (max-width: 768px) {
+             header h1 { font-size: 2.2rem; }
+             .projects-grid { grid-template-columns: 1fr; }
+             .stats-grid { grid-template-columns: repeat(2, 1fr); }
+             .skills-grid { grid-template-columns: 1fr; }
+             .nav-links { display: none; }
+             header { padding: 120px 0 60px; }
+             
+             #avatar-container {
+               width: 140px;
+               height: 220px;
+               bottom: 80px;
+               right: 10px;
+             }
+             
+             #avatar-container canvas {
+               width: 140px;
+               height: 180px;
+             }
+             
+             #start-tour {
+               left: 20px;
+               right: 20px;
+               bottom: 20px;
+               width: calc(100% - 40px);
+             }
+             
+             #tour-controls {
+               left: 20px;
+               bottom: 20px;
+               width: calc(100% - 40px);
+               display: flex;
+               gap: 10px;
+             }
+             
+             #tour-controls button {
+               flex: 1;
+             }
+             
+             #tour-progress {
+               left: 20px;
+               bottom: 65px;
+             }
+             
+             .profile-image {
+               width: 180px;
+               height: 180px;
+             }
+             
+             .profile-image-inner {
+               width: 160px;
+               height: 160px;
+             }
+         }
+         
+         @media (orientation: portrait) {
+           .header-content {
+             flex-direction: column;
+             text-align: center;
+           }
+           
+           #avatar-container {
+             bottom: 70px;
+             right: 10px;
+           }
+           
+           .contact-section form {
+             width: 100%;
+           }
+           
+           .contact-links {
+             flex-direction: column;
+           }
+         }
+         
+         @media (max-width: 480px) {
+           header h1 { font-size: 1.8rem; }
+           header p { font-size: 1rem; }
+           
+           .container {
+             padding: 0 16px;
+           }
+           
+           .cta-buttons {
+             flex-direction: column;
+           }
+           
+           .btn {
+             width: 100%;
+             justify-content: center;
+           }
+           
+           #avatar-container {
+             width: 120px;
+             height: 180px;
+             bottom: 80px;
+           }
+           
+           #ai-text {
+             font-size: 0.65rem;
+           }
+         }
 
         footer {
             padding: 32px 0;
@@ -889,17 +983,84 @@
 
          #avatar-container {
            position: fixed;
-           bottom: 20px;
-           right: 30px;
-           width: 300px;
+           bottom: 100px;
+           right: 10px;
+           width: 200px;
            height: 300px;
            z-index: 999;
            pointer-events: auto;
+           display: flex;
+           flex-direction: column;
+           align-items: center;
          }
 
          #avatar-container canvas {
            background: transparent !important;
          }
+         
+         #ai-text {
+           background: transparent;
+           border: none;
+           padding: 8px 0;
+           font-size: 0.75rem;
+           color: rgba(255,255,255,0.7);
+           font-family: 'Space Mono', monospace;
+           max-width: 180px;
+           text-align: center;
+           margin-top: -10px;
+           transition: opacity 0.2s ease;
+           pointer-events: none;
+           text-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+         }
+         
+         #start-tour {
+           position: fixed;
+           bottom: 600px;
+           left: 1350px;
+           padding: 10px 15px;
+           background: #00adb5;
+           color: white;
+           border: none;
+           border-radius: 10px;
+           cursor: pointer;
+           z-index: 999;
+           font-family: 'Space Mono', monospace;
+           transition: transform 0.2s;
+         }
+         
+         #start-tour:hover {
+           transform: translateY(-2px);
+         }
+         
+         #tour-controls {
+           position: fixed;
+           bottom: 600px;
+           left: 1340px;
+           z-index: 999;
+           display: none;
+         }
+
+         #tour-controls button {
+           margin-right: 10px;
+           padding: 8px 12px;
+           border: none;
+           border-radius: 8px;
+           background: #00adb5;
+           color: white;
+           cursor: pointer;
+           font-family: 'Space Mono', monospace;
+         }
+         
+          #tour-progress {
+            position: fixed;
+            bottom: 120px;
+            left: 20px;
+            color: white;
+            font-size: 14px;
+            font-family: 'Space Mono', monospace;
+            z-index: 999;
+            display: none;
+          }
 
         .terminal-line {
             font-family: 'Space Mono', monospace;
@@ -1262,7 +1423,18 @@
      <canvas id="canvas-bg"></canvas>
      <div class="cursor-glow" id="cursorGlow"></div>
      
-     <div id="avatar-container"></div>
+     <div id="avatar-container">
+       <div id="ai-text"></div>
+     </div>
+     
+      <button id="start-tour">Start Tour 🚀</button>
+      
+      <div id="tour-controls">
+        <button id="next-step">Next ➡️</button>
+        <button id="end-tour">End ❌</button>
+      </div>
+      
+      <div id="tour-progress"></div>
      
      <script src="avatar.js" type="module"></script>
      <script type="module">
